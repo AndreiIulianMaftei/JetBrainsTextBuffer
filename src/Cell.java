@@ -17,7 +17,10 @@ public class Cell {
             this.bg    = bg;
             this.style = style;
         }
-        public void reset() {
+
+
+
+    public void reset() {
             ch           = EMPTY;
             fg           = TerminalColor.DEFAULT;
             bg           = TerminalColor.DEFAULT;
@@ -25,4 +28,20 @@ public class Cell {
             wide         = false;
             continuation = false;
         }
+
+    public String getChar() {
+        return String.valueOf(ch);
+    }
+
+    public String getFg() {
+            return String.valueOf(fg);
+    }
+
+    public String isBold() {
+        return String.valueOf(TextStyle.isSet(style, TextStyle.BOLD));
+    }
+
+    public String getBg() {
+        return String.valueOf(bg);
+    }
 }
